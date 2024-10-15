@@ -362,7 +362,7 @@ function eatExpression(expressionDiv) {
   function endGame() {
     gameOver = true; // עדכון מצב המשחק
     const gameOverElement = document.getElementById('game-over');
-    gameOverElement.textContent = `המשחק נגמר! הניקוד הסופי הוא: ${score},  רענון את העמוד כדי להתחיל מחדש`; // הצגת הניקוד הסופי
+    gameOverElement.textContent = `המשחק נגמר! הניקוד הסופי הוא: ${score},  רעננו את העמוד כדי להתחיל מחדש`; // הצגת הניקוד הסופי
     gameOverElement.style.display = 'flex'; // מציג את השכבת סיום
   }
 
