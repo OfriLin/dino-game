@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #game-container {
+    position: relative;
+    width: 1200px; /* הגודל החדש של הרוחב */
+    height: 400px; /* ניתן לשמור את הגובה כמו שהוא או לשנות לפי הצורך */
+    border: 1px solid black;
+    overflow: hidden; /* מוודא שהביטויים ייעלמו כשהם יוצאים מהמסך */
+  }
+  
+  #dino {
+    width: 60px; /* ניתן להגדיל את הרוחב של הדמות כדי להיות תואם עם השינוי */
+    height: 60px; /* ניתן להגדיל את הגובה של הדמות */
+    position: absolute;
+    bottom: 0; /* הדמות ממוקמת בתחתית */
+    left: 20px;
+  }
+  
+  #score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  #game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* שכבת כהה */
+    color: white; /* צבע הטקסט */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* גודל הטקסט של הודעת הסיום */
+    display: none; /* מתחבא כשאין צורך */
+  }
+  
+  .expression {
+    position: absolute;
+    bottom: 0; /* מיקום הביטויים בתחתית המשחק */
+    font-size: 20px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: auto; /* אוטומטי */
+    height: auto; /* אוטומטי */
+    right: 0; /* התחל מקצה ימין */
+    white-space: nowrap;
+  }
+  
+  /* אנימציה של אכילת הביטוי */
+  .eating {
+    animation: eat-animation 0.5s forwards; /* תן לו להיעלם תוך 0.5 שניות */
+  }
+  
+  @keyframes eat-animation {
+    0% {
+      transform: scale(1); /* התחל בגודל רגיל */
+      opacity: 1; /* התחל לא שקוף */
+    }
+    100% {
+      transform: scale(0); /* מקטין את הגודל לאפס */
+      opacity: 0; /* מבטל את השקיפות */
+    }
+  }
+  
+  /* אנימציה של שינוי צבע וגודל של הניקוד */
+  .score-animation {
+    animation: score-change 0.5s forwards; /* שינוי צבע וגודל */
+  }
+  
+  @keyframes score-change {
+    0% { color: black; font-size: 20px; }
+    50% { color: red; font-size: 30px; } /* צבע אדום וגודל גדול */
+    100% { color: black; font-size: 20px; }
+  }
+  
