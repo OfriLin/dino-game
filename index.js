@@ -221,7 +221,7 @@ const expressions = [
     const dinoImg = document.getElementById('dino-img');
     dinoImg.src = 'images/dinoStand.png'; // לשים את התמונה של הדינוזואר הקופץ
   
-    let jumpHeight = 200; // גובה הקפיצה
+    let jumpHeight = 250; // גובה הקפיצה
     let jumpPosition = 0; // מיקום הקפיצה
     const jumpInterval = setInterval(() => {
       if (jumpPosition >= jumpHeight) {
@@ -267,7 +267,7 @@ const expressions = [
         }
 
         // העלאת הערך של right כדי להזיז את הביטוי שמאלה
-        expressionPosition += 5;
+        expressionPosition += 3;
         expressionDiv.style.right = expressionPosition + 'px';  // כאן מזיזים את הקופסה
 
         // בדיקה אם הביטוי עבר את הקצה השמאלי של המסך
@@ -377,7 +377,7 @@ function eatExpression(expressionDiv) {
   
   // התחלת המשחק
 // יצירת ביטוי כל 2 שניות
-setInterval(createExpression, 2000);
+setInterval(createExpression, 3000);
 
 // הוספת אירוע להקשות על מקש רווח
 document.addEventListener('keydown', (event) => {
